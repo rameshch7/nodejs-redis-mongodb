@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nodejs-app:
+    image: rameshch07/node:node-app
+    ports:
+      - "3000:3000"
+    links:
+      - redis
+      - mongodb
+    depends_on:
+      - redis
+      - mongodb
+
+  # redis:
+  #   image: "redis:latest"
+  #   ports:
+  #     - "6379:6379"
+
+  # mongodb:
+  #   image: "mongo:latest"
+  #   ports:
+  #     - "27017:27017"

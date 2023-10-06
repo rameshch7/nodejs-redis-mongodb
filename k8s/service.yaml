@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-app-service
+spec:
+  selector:
+    app: nodejs-app # Match the label of your Node.js application pods
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000 # Port your Node.js application is listening on

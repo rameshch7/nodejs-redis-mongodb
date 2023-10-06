@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app-deployment
+spec:
+  replicas: 1 # Set to 1 for a single replica
+  selector:
+    matchLabels:
+      app: nodejs-app
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+        - name: nodejs-app
+          image:  rameshch07/node:node-app # Replace with your Docker image URL
+          ports:
+            - containerPort: 3000 # Port your Node.js app is listening on
+          env:
+            - name: MONGO_URI
+              value: mongodb://mongo_host:27017/mydatabase # Replace with your MongoDB connection URL
+            - name: REDIS_HOST
+              value: redis_host # Replace with your Redis host
+            - name: REDIS_PORT
+              value: "6379" # Replace with your Redis port
