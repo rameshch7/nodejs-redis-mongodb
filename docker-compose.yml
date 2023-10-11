@@ -11,12 +11,12 @@ services:
       - redis
       - mongodb
 
-  # redis:
-  #   image: "redis:latest"
-  #   ports:
-  #     - "6379:6379"
+   redis:
+     image: "redis:latest"
+     ports:
+       - "6379:6379"
 
-  # mongodb:
-  #   image: "mongo:latest"
-  #   ports:
-  #     - "27017:27017"
+   mongodb:
+     image: "mongo:latest"
+     ports:
+       - "27017:27017"
